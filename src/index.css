@@ -1,0 +1,122 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold; 
+  font-size: 25px;
+}
+.active {
+  padding: 0px 15px 0px 15px;
+  /* color:brown */
+}
+.addition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+li {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+textarea {
+  font-size: 18px;
+  margin-bottom:20px
+}
+h1 {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button_control {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.horses {
+  margin-top: 10px;
+  height: 200px;
+}
+.addHorse {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.submit_horses {
+  font-size:larger;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.submit {
+  margin-top: 10px;
+}
+.title {
+  margin-bottom: 20px;
+}
+.active {
+  /* color: rgb(98, 219, 17); */
+  cursor: default;
+} 
+a:link {
+  text-decoration: none;
+   color: black;
+}
+a:visited {
+  text-decoration:wavy;
+  color: rgb(219, 125, 17);
+  cursor: grab;
+}
+a:hover {
+  text-decoration:wavy;
+  cursor: grab;
+}
+
+a:active {
+  text-decoration:wavy;
+  color: rgb(30, 176, 176);
+  cursor: grab;
+}
+/* label.uploadbutton input {
+  display: none;
+} */
+.hidden{
+  display: none;
+}
+label.uploadbutton .img-preview-wrapper {
+  cursor: pointer;
+}
+.button {
+  width: 100%;
+  display: flex;
+  justify-content:flex-end;
+  margin-top: 10px;
+}
+.logout {
+  margin-left: 10px;
+}
