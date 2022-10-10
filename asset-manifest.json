@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MirovaViktoria/project_horses/static/css/main.3878f15d.css",
+    "main.js": "/MirovaViktoria/project_horses/static/js/main.255e8b5c.js",
+    "index.html": "/MirovaViktoria/project_horses/index.html",
+    "main.3878f15d.css.map": "/MirovaViktoria/project_horses/static/css/main.3878f15d.css.map",
+    "main.255e8b5c.js.map": "/MirovaViktoria/project_horses/static/js/main.255e8b5c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3878f15d.css",
+    "static/js/main.255e8b5c.js"
+  ]
+}
