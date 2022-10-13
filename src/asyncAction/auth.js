@@ -38,13 +38,13 @@ export const loginUser = (login, password) => {
         });
     };
 };
-export const logOut = (login, password, na) => {
+export const logOut = (login, password) => {
     return function (dispatch) {
         Auth(login, password).then((json) => {
             if (json.token) {
                 localStorage.remove('token');
                 dispatch({
-                    type: 'AUTH',
+                    type: 'REMOVE',
                     payload: json,
                 });
             } else {

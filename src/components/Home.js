@@ -5,8 +5,6 @@ import { removeAction } from '../store/authStore';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-// import { useNavigate } from 'react-router-dom';
-
 const Home = () => {
     const horses = useSelector((state) => state.rootReducer.horses.horses);
     const auth = useSelector((state) => state.rootReducer.auth.auth);
