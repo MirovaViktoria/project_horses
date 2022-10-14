@@ -21,7 +21,7 @@ const Home = () => {
                 {/* <div className='autorization'>
                     <Link to='/autorization'>Autorization</Link>
                 </div> */}
-                {auth.token !== undefined && (
+                {auth.token !== null && (
                     <div
                         style={{
                             display: 'none',
@@ -30,7 +30,7 @@ const Home = () => {
                         <Link to='/autorization'>Autorization</Link>
                     </div>
                 )}
-                {auth.token === undefined && (
+                {auth.token === null && (
                     <div
                         style={{
                             display: 'block',
@@ -39,12 +39,12 @@ const Home = () => {
                         <Link to='/autorization'>Autorization</Link>
                     </div>
                 )}
-                {auth.token !== undefined && (
+                {auth.token !== null && (
                     <div>
                         <Link to='/addHorse'>Add Horse</Link>
                     </div>
                 )}
-                {auth.token !== undefined && (
+                {auth.token !== null && (
                     <button className='logout' onClick={remove}>
                         LogOut
                     </button>
@@ -66,7 +66,7 @@ const Home = () => {
                         }}
                     >
                         <div className='button'>
-                            {auth.token !== undefined && (
+                            {auth.token !== null && (
                                 <button
                                     className='delete'
                                     onClick={() =>
@@ -88,9 +88,9 @@ const Home = () => {
                             }
                             alt=''
                         ></img>
-                        <p>{horse.title}.</p>
-                        <p>{horse.shortDesc}.</p>
-                        <p>{horse.fullDesc}.</p>
+                        <p>{horse.title}</p>
+                        <p>{horse.shortDesc}</p>
+                        <p>{horse.fullDesc}</p>
                     </div>
                 ))}
             </div>
