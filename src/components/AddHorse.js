@@ -18,7 +18,7 @@ function AddHorse() {
 
     const auth = useSelector((state) => state.rootReducer.auth.auth);
     useEffect(() => {
-        if (auth.token === undefined) {
+        if (auth.token === null) {
             navigate('/autorization');
         }
     });

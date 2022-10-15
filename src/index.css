@@ -13,10 +13,9 @@ body {
 .menu {
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  font-weight: bold; 
-  font-size: 25px;
+  font-size: 20px;
 }
 .active {
   padding: 0px 15px 0px 15px;

@@ -1,7 +1,11 @@
-import { Link } from 'react-router-dom';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+import { Button } from '@mui/material';
 import React from 'react';
 import { deleteHorses } from '../asyncAction/horses';
-import { removeAction } from '../store/authStore';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -10,46 +14,9 @@ const Home = () => {
     const auth = useSelector((state) => state.rootReducer.auth.auth);
     let dispatch = useDispatch();
     // let navigate = useNavigate();
-    const remove = () => {
-        dispatch(removeAction(auth.token));
-        localStorage.clear('token');
-        // navigate('/autorization');
-    };
+
     return (
         <div className='info'>
-            <div className='button_control'>
-                {/* <div className='autorization'>
-                    <Link to='/autorization'>Autorization</Link>
-                </div> */}
-                {auth.token !== null && (
-                    <div
-                        style={{
-                            display: 'none',
-                        }}
-                    >
-                        <Link to='/autorization'>Autorization</Link>
-                    </div>
-                )}
-                {auth.token === null && (
-                    <div
-                        style={{
-                            display: 'block',
-                        }}
-                    >
-                        <Link to='/autorization'>Autorization</Link>
-                    </div>
-                )}
-                {auth.token !== null && (
-                    <div>
-                        <Link to='/addHorse'>Add Horse</Link>
-                    </div>
-                )}
-                {auth.token !== null && (
-                    <button className='logout' onClick={remove}>
-                        LogOut
-                    </button>
-                )}
-            </div>
             <div className='horse.info'>
                 {horses.map((horse) => (
                     <div
@@ -67,7 +34,8 @@ const Home = () => {
                     >
                         <div className='button'>
                             {auth.token !== null && (
-                                <button
+                                <Button
+                                    variant='outlined'
                                     className='delete'
                                     onClick={() =>
                                         dispatch(
@@ -75,8 +43,8 @@ const Home = () => {
                                         )
                                     }
                                 >
-                                    X
-                                </button>
+                                    Delete
+                                </Button>
                             )}
                         </div>
                         <img

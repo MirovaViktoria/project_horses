@@ -9,35 +9,27 @@ export const Auth = (navigate, login, password) => {
             headers: {
                 // Authentication: 'Bearer Token',
                 'Content-Type': 'application/json',
-                token: localStorage.getItem('token'),
             },
             body: JSON.stringify({ login, password }),
         })
-            .then((respose) => respose.text())
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.text();
+            })
+
             .then((token) => {
+                localStorage.setItem('token', token);
                 dispatch(authAction(token));
                 navigate('/');
             })
             .catch((error) => {
-                console.log(error);
+                alert('Wrong passwrod!');
             });
     };
 };
-export const loginUser = (login, password) => {
-    return function (dispatch) {
-        Auth(login, password).then((json) => {
-            if (json.token) {
-                localStorage.setItem('token', json.token);
-                dispatch({
-                    type: 'AUTH',
-                    payload: json,
-                });
-            } else {
-                console.log(json.error);
-            }
-        });
-    };
-};
+
 export const logOut = (login, password) => {
     return function (dispatch) {
         Auth(login, password).then((json) => {

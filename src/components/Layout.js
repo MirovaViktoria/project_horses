@@ -1,17 +1,56 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import images from '../img/images.png';
+import { Button } from '@mui/material';
+import { removeAction } from '../store/authStore';
 
 const Layout = () => {
+    const auth = useSelector((state) => state.rootReducer.auth.auth);
+    let dispatch = useDispatch();
+    const remove = () => {
+        dispatch(removeAction(auth.token));
+        localStorage.clear('token');
+    };
     return (
         <>
             <header className='menu'>
                 <NavLink to='/'>
-                    {/* <img className='bee' src={images} alt=''></img> */}
-                    Home
+                    <Button>Home</Button>
                 </NavLink>
-                {/* <NavLink to='/developer'>Developer</NavLink> */}
-                {/* <NavLink to='/autorization'>Autorization</NavLink> */}
+                {auth.token !== null && (
+                    <div
+                        style={{
+                            display: 'none',
+                        }}
+                    >
+                        <NavLink to='/autorization'>
+                            <Button>Autorization</Button>
+                        </NavLink>
+                    </div>
+                )}
+                {auth.token === null && (
+                    <div
+                        style={{
+                            display: 'block',
+                        }}
+                    >
+                        <NavLink to='/autorization'>
+                            <Button>Autorization</Button>
+                        </NavLink>
+                    </div>
+                )}
+                {auth.token !== null && (
+                    <div>
+                        <NavLink to='/addHorse'>
+                            <Button>Add Horse</Button>
+                        </NavLink>
+                    </div>
+                )}
+                {auth.token !== null && (
+                    <Button variant='contained' onClick={remove}>
+                        Logout
+                    </Button>
+                )}
             </header>
 
             <Outlet />

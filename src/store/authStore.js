@@ -15,7 +15,7 @@ export const authReducer = (state = defaultState, action) => {
         case REMOVE:
             return {
                 ...state,
-                auth: { token: undefined },
+                auth: { token: null },
             };
 
         default:
