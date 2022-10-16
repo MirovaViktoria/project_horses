@@ -32,6 +32,18 @@ const Home = () => {
                             padding: '0px 10px 0px 10px',
                         }}
                     >
+                        <img
+                            className='horses'
+                            src={
+                                'http://195.133.145.217/Horse/' +
+                                horse.id +
+                                '/image'
+                            }
+                            alt=''
+                        ></img>
+                        <p>{horse.title}</p>
+                        <p>{horse.shortDesc}</p>
+                        <p>{horse.fullDesc}</p>
                         <div className='button'>
                             {auth.token !== null && (
                                 <Button
@@ -47,18 +59,6 @@ const Home = () => {
                                 </Button>
                             )}
                         </div>
-                        <img
-                            className='horses'
-                            src={
-                                'http://195.133.145.217/Horse/' +
-                                horse.id +
-                                '/image'
-                            }
-                            alt=''
-                        ></img>
-                        <p>{horse.title}</p>
-                        <p>{horse.shortDesc}</p>
-                        <p>{horse.fullDesc}</p>
                     </div>
                 ))}
             </div>
