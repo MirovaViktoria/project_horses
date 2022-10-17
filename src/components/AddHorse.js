@@ -2,11 +2,18 @@ import '../index.css';
 
 import React, { useState } from 'react';
 
+import { Button } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import SendIcon from '@mui/icons-material/Send';
+import { TextField } from '@mui/material';
 import { createHorses } from '../asyncAction/horses';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
+// import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 function AddHorse() {
     const [file, setFile] = useState(null);
@@ -71,18 +78,53 @@ function AddHorse() {
     return (
         <div className='addHorse'>
             <form className='submit_horses' onSubmit={handleSubmit}>
-                <h1>React File Upload</h1>
-                <input className='title' type='text' onChange={onChangeTitle} />
-                <textarea type='text' onChange={onChangeShortDesc}></textarea>
-                <textarea type='text' onChange={onChangeFullDesc}></textarea>
+                <h1>Добавить новые элементы</h1>
+                <TextField
+                    id='Title'
+                    label='Title'
+                    multiline
+                    maxRows={2}
+                    style={{ width: 206, margin: 5, fontSize: 12 }}
+                    // className='title'
+                    // type='text'
+                    onChange={onChangeTitle}
+                />
+                <TextField
+                    id='ShortDesc'
+                    label='ShortDesc'
+                    multiline
+                    maxRows={2}
+                    style={{ width: 700, margin: 5, fontSize: 12 }}
+                    // type='text'
+                    onChange={onChangeShortDesc}
+                ></TextField>
+                <TextField
+                    id='FullDesc'
+                    label='FullDesc'
+                    multiline
+                    maxRows={4}
+                    style={{ width: 700, margin: 5, fontSize: 12 }}
+                    onChange={onChangeFullDesc}
+                ></TextField>
                 <label className='uploadbutton'>
-                    <input
-                        type='file'
-                        id='image'
-                        accept='.png, .jpg, .jpeg'
-                        onChange={handleChange}
-                        className={isButtonVisible ? '' : 'hidden'}
-                    />
+                    <div>
+                        <IconButton
+                            color='primary'
+                            aria-label='upload picture'
+                            component='label'
+                        >
+                            <input
+                                type='file'
+                                hidden
+                                id='image'
+                                accept='.png, .jpg, .jpeg'
+                                onChange={handleChange}
+                                className={isButtonVisible ? '' : 'hidden'}
+                            />
+                            <PhotoCamera />
+                        </IconButton>
+                    </div>
+
                     {fileDataURL ? (
                         <p className='img-preview-wrapper'>
                             {<img src={fileDataURL} alt='preview' />}
@@ -90,9 +132,14 @@ function AddHorse() {
                     ) : null}
                 </label>
 
-                <button className='submit' type='submit'>
-                    Submit
-                </button>
+                <Button
+                    className='submit'
+                    type='submit'
+                    variant='contained'
+                    endIcon={<SendIcon />}
+                >
+                    Отправить
+                </Button>
             </form>
         </div>
     );

@@ -20,7 +20,6 @@ export const deleteHorses = (id, token) => {
                 Authorization: 'Bearer ' + token,
             },
         }).then((x) => {
-            //dispatch(removeHorsesAction(id));
             dispatch(fetchHorses());
         });
     };
@@ -43,7 +42,7 @@ export const createHorses = (formData, navigate, token) => {
                 //     fullDesc: fullDesc,
                 // });
                 dispatch(fetchHorses());
-                navigate('/');
+                navigate('/Breeds');
             })
             .catch((error) => {
                 console.log(error);

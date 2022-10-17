@@ -30,6 +30,7 @@ export const horseReducer = (state = defaultState, action) => {
                     (horses) => horses.id !== action.payload
                 ),
             };
+
         default:
             return state;
     }

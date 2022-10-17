@@ -45,8 +45,6 @@ li {
 }
 h1 {
   font-size: 20px;
-  display: flex;
-  justify-content: center;
 }
 .info {
   display: flex;
@@ -64,14 +62,15 @@ h1 {
 }
 .addHorse {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 .submit_horses {
+  width: 100%;
   font-size:larger;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 .submit {
   margin-top: 10px;
