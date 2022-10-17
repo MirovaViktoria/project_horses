@@ -11,11 +11,18 @@ const Layout = () => {
         dispatch(removeAction(auth.token));
         localStorage.clear('token');
     };
+
     return (
         <>
             <header className='menu'>
                 <NavLink to='/'>
-                    <Button>Home</Button>
+                    <Button>Главная</Button>
+                </NavLink>
+                <NavLink to='/breeds'>
+                    <Button>Породы</Button>
+                </NavLink>
+                <NavLink to='/data'>
+                    <Button>Факты</Button>
                 </NavLink>
                 {auth.token !== null && (
                     <div
@@ -24,7 +31,7 @@ const Layout = () => {
                         }}
                     >
                         <NavLink to='/autorization'>
-                            <Button>Autorization</Button>
+                            <Button>Авторизация</Button>
                         </NavLink>
                     </div>
                 )}
@@ -35,20 +42,20 @@ const Layout = () => {
                         }}
                     >
                         <NavLink to='/autorization'>
-                            <Button>Autorization</Button>
+                            <Button>Авторизация</Button>
                         </NavLink>
                     </div>
                 )}
                 {auth.token !== null && (
                     <div>
                         <NavLink to='/addHorse'>
-                            <Button>Add Horse</Button>
+                            <Button>Добавить</Button>
                         </NavLink>
                     </div>
                 )}
                 {auth.token !== null && (
                     <Button variant='contained' onClick={remove}>
-                        Logout
+                        Выйти
                     </Button>
                 )}
             </header>

@@ -1,3 +1,4 @@
+import { AlertError } from './Alert';
 import { Auth } from '../asyncAction/auth';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +9,6 @@ export const Autorization = () => {
     const dispatch = useDispatch();
     const [login, setLogin] = useState();
     const [password, setPassword] = useState();
-
     function handleSubmit(event) {
         event.preventDefault();
         dispatch(Auth(navigate, login, password));
@@ -16,6 +16,7 @@ export const Autorization = () => {
 
     return (
         <form onSubmit={handleSubmit}>
+            <AlertError></AlertError>
             <div className='auth'>
                 <div>
                     <div>

@@ -1,4 +1,5 @@
 import { authAction } from '../store/authStore';
+import { authError } from '../store/authStore';
 
 const url = 'http://195.133.145.217/Auth/';
 
@@ -25,7 +26,8 @@ export const Auth = (navigate, login, password) => {
                 navigate('/');
             })
             .catch((error) => {
-                alert('Wrong passwrod!');
+                dispatch(authError(error));
+                //alert('Wrong passwrod!');
             });
     };
 };
