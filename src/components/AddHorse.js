@@ -79,6 +79,31 @@ function AddHorse() {
         <div className='addHorse'>
             <form className='submit_horses' onSubmit={handleSubmit}>
                 <h1>Добавить новые элементы</h1>
+                <label className='uploadbutton'>
+                    <div>
+                        <IconButton
+                            color='primary'
+                            aria-label='upload picture'
+                            component='label'
+                        >
+                            <input
+                                type='file'
+                                hidden
+                                id='image'
+                                accept='.png, .jpg, .jpeg'
+                                onChange={handleChange}
+                                className={isButtonVisible ? '' : 'hidden'}
+                            />
+                            <PhotoCamera />
+                        </IconButton>
+                    </div>
+
+                    {fileDataURL ? (
+                        <p className='img-preview-wrapper'>
+                            {<img src={fileDataURL} alt='preview' />}
+                        </p>
+                    ) : null}
+                </label>
                 <TextField
                     id='Title'
                     label='Title'
@@ -106,40 +131,17 @@ function AddHorse() {
                     style={{ width: 700, margin: 5, fontSize: 12 }}
                     onChange={onChangeFullDesc}
                 ></TextField>
-                <label className='uploadbutton'>
-                    <div>
-                        <IconButton
-                            color='primary'
-                            aria-label='upload picture'
-                            component='label'
-                        >
-                            <input
-                                type='file'
-                                hidden
-                                id='image'
-                                accept='.png, .jpg, .jpeg'
-                                onChange={handleChange}
-                                className={isButtonVisible ? '' : 'hidden'}
-                            />
-                            <PhotoCamera />
-                        </IconButton>
-                    </div>
 
-                    {fileDataURL ? (
-                        <p className='img-preview-wrapper'>
-                            {<img src={fileDataURL} alt='preview' />}
-                        </p>
-                    ) : null}
-                </label>
-
-                <Button
-                    className='submit'
-                    type='submit'
-                    variant='contained'
-                    endIcon={<SendIcon />}
-                >
-                    Отправить
-                </Button>
+                <div className='button_submit'>
+                    <Button
+                        className='submit'
+                        type='submit'
+                        variant='contained'
+                        endIcon={<SendIcon />}
+                    >
+                        Отправить
+                    </Button>
+                </div>
             </form>
         </div>
     );

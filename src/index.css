@@ -66,11 +66,16 @@ h1 {
   width: 100%;
 }
 .submit_horses {
-  width: 100%;
+  width: 800px;
   font-size:larger;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.button_submit {
+  display: flex;
+  width: 705px;
+  justify-content: flex-end;
 }
 .submit {
   margin-top: 10px;
