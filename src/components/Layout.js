@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Button } from '@mui/material';
+import horse from '../img/icons8-эмодзи-морда-лошади-48.png';
 import { removeAction } from '../store/authStore';
 
 const Layout = () => {
@@ -14,6 +15,11 @@ const Layout = () => {
 
     return (
         <>
+            <div className='logo'>
+                <NavLink to='/'>
+                    <img src={horse} alt=''></img>
+                </NavLink>
+            </div>
             <header className='menu'>
                 <NavLink to='/'>
                     <Button>Главная</Button>

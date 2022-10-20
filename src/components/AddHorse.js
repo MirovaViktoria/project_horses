@@ -75,6 +75,7 @@ function AddHorse() {
         formData.append('image', file);
         dispatch(createHorses(formData, navigate, auth.token));
     }
+
     return (
         <div className='addHorse'>
             <form className='submit_horses' onSubmit={handleSubmit}>
@@ -105,13 +106,12 @@ function AddHorse() {
                     ) : null}
                 </label>
                 <TextField
+                    required
                     id='Title'
                     label='Title'
                     multiline
                     maxRows={2}
                     style={{ width: 206, margin: 5, fontSize: 12 }}
-                    // className='title'
-                    // type='text'
                     onChange={onChangeTitle}
                 />
                 <TextField
@@ -120,7 +120,6 @@ function AddHorse() {
                     multiline
                     maxRows={2}
                     style={{ width: 700, margin: 5, fontSize: 12 }}
-                    // type='text'
                     onChange={onChangeShortDesc}
                 ></TextField>
                 <TextField
@@ -131,7 +130,6 @@ function AddHorse() {
                     style={{ width: 700, margin: 5, fontSize: 12 }}
                     onChange={onChangeFullDesc}
                 ></TextField>
-
                 <div className='button_submit'>
                     <Button
                         className='submit'

@@ -6,9 +6,7 @@ export const AlertError = (navigate) => {
 
     if (error != null)
         return (
-            <Alert severity='error'>
-                This is an error alert — check it out!
-            </Alert>
+            <Alert severity='error'>Invalid data entered — check it out!</Alert>
         );
     else return <div></div>;
 };

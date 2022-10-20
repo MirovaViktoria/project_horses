@@ -23,12 +23,11 @@ const Breeds = () => {
                         key={horse.id}
                         style={{
                             fontSize: '20px',
-                            border: '1px solid black',
                             marginTop: 5,
                             borderRadius: '5px',
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'center',
+                            alignItems: 'flex-start',
                             padding: '0px 10px 0px 10px',
                         }}
                     >
@@ -62,6 +61,7 @@ const Breeds = () => {
                     </div>
                 ))}
             </div>
+            <button></button>
         </div>
     );
 };
