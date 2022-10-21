@@ -2,6 +2,7 @@ import '../index.css';
 
 import React, { useState } from 'react';
 
+import { Alert } from '@mui/material';
 import { Button } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
@@ -68,6 +69,9 @@ function AddHorse() {
     };
     function handleSubmit(event) {
         event.preventDefault();
+        if (file == null) {
+            return;
+        }
         const formData = new FormData();
         formData.append('title', title);
         formData.append('shortDesc', shortDesc);
@@ -82,6 +86,11 @@ function AddHorse() {
                 <h1>Добавить новые элементы</h1>
                 <label className='uploadbutton'>
                     <div>
+                        {file == null && (
+                            <Alert severity='error'>
+                                empty value — check it out!
+                            </Alert>
+                        )}
                         <IconButton
                             color='primary'
                             aria-label='upload picture'
@@ -106,6 +115,7 @@ function AddHorse() {
                     ) : null}
                 </label>
                 <TextField
+                    value={title}
                     required
                     id='Title'
                     label='Title'
@@ -115,6 +125,8 @@ function AddHorse() {
                     onChange={onChangeTitle}
                 />
                 <TextField
+                    value={shortDesc}
+                    required
                     id='ShortDesc'
                     label='ShortDesc'
                     multiline
@@ -122,7 +134,10 @@ function AddHorse() {
                     style={{ width: 700, margin: 5, fontSize: 12 }}
                     onChange={onChangeShortDesc}
                 ></TextField>
+
                 <TextField
+                    value={fullDesc}
+                    required
                     id='FullDesc'
                     label='FullDesc'
                     multiline
@@ -130,8 +145,10 @@ function AddHorse() {
                     style={{ width: 700, margin: 5, fontSize: 12 }}
                     onChange={onChangeFullDesc}
                 ></TextField>
+
                 <div className='button_submit'>
                     <Button
+                        // disabled
                         className='submit'
                         type='submit'
                         variant='contained'

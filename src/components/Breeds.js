@@ -61,7 +61,6 @@ const Breeds = () => {
                     </div>
                 ))}
             </div>
-            <button></button>
         </div>
     );
 };
