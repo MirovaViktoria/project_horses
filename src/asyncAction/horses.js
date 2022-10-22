@@ -42,7 +42,7 @@ export const createHorses = (formData, navigate, token) => {
                 //     fullDesc: fullDesc,
                 // });
                 dispatch(fetchHorses());
-                // navigate('/Breeds');
+                navigate('/Breeds');
             })
             .catch((error) => {
                 console.log(error);

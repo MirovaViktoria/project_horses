@@ -1,5 +1,7 @@
 import { AlertError } from './Alert';
 import { Auth } from '../asyncAction/auth';
+import { Button } from '@mui/material';
+import { TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -18,24 +20,38 @@ export const Autorization = () => {
         <form onSubmit={handleSubmit}>
             <AlertError></AlertError>
             <div className='auth'>
-                <div>
-                    <div>
-                        <h1>Login</h1>
-                        <input
+                <div className='autorization'>
+                    <div className='login'>
+                        <TextField
                             type='text'
+                            required
+                            id='Login'
+                            label='Login'
+                            multiline
+                            maxRows={2}
                             onChange={(e) => setLogin(e.target.value)}
-                        ></input>
+                        />
                     </div>
-                    <div>
-                        <h1>Password</h1>
-                        <input
+                    <div className='password'>
+                        <TextField
                             type='password'
+                            required
+                            id='Password'
+                            label='Password'
+                            multiline
+                            maxRows={2}
                             onChange={(e) => setPassword(e.target.value)}
-                        ></input>
+                        />
                     </div>
-                    <button className='submit' type='submit'>
-                        Submit
-                    </button>
+                    <div className='auth_button'>
+                        <Button
+                            className='submit'
+                            type='submit'
+                            variant='contained'
+                        >
+                            Submit
+                        </Button>
+                    </div>
                 </div>
             </div>
         </form>

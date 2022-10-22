@@ -27,7 +27,6 @@ export const Auth = (navigate, login, password) => {
             })
             .catch((error) => {
                 dispatch(authError(error));
-                //alert('Wrong passwrod!');
             });
     };
 };

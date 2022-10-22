@@ -148,7 +148,6 @@ function AddHorse() {
 
                 <div className='button_submit'>
                     <Button
-                        // disabled
                         className='submit'
                         type='submit'
                         variant='contained'

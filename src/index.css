@@ -21,6 +21,18 @@ body {
   align-items: center;
   font-size: 20px;
 }
+.about_horses {
+  font-style:oblique;
+  color: maroon;
+  font-family: 'Lexend Deca', sans-serif;
+}
+.title {
+  font-family: 'Lexend Deca', sans-serif;
+  margin-bottom: 20px;
+  color:#0a0a0a;
+  text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3); 
+}
+
 .addition {
     display: flex;
     flex-direction: column;
@@ -49,11 +61,26 @@ li {
 h1 {
   font-size: 20px;
 }
+.horse_title {
+  font-weight: bold;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: larger;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  font-family: 'Lexend Deca', sans-serif;
+}
+.shortDesc_title {
+  font-family: 'Lexend Deca', sans-serif;
+}
+.fullDesc_title {
+  font-family: 'Lexend Deca', sans-serif;
+}
 .button {
   display: flex;
   width: 100%;
   justify-content: flex-end;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
 }
 .button_control {
   width: 100%;
@@ -85,9 +112,7 @@ h1 {
 .submit {
   margin-top: 10px;
 }
-.title {
-  margin-bottom: 20px;
-}
+
  .active {
   text-decoration: none;
   color: rgb(219, 155, 17);
@@ -108,3 +133,32 @@ a:visited {
   cursor: grab;
 }  
 
+.auth {
+  width: 300px;
+  height: 350px;
+  background: mediumaquamarine;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+.autorization {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login {
+  margin: 0px 0px 25px 0px;
+}
+.password {
+  margin: 0px 0px 25px 0px;
+}
+.auth_button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}

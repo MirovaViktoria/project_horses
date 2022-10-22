@@ -31,6 +31,7 @@ const Breeds = () => {
                             padding: '0px 10px 0px 10px',
                         }}
                     >
+                        <p className='horse_title'>{horse.title}</p>
                         <img
                             className='horses'
                             src={
@@ -40,9 +41,8 @@ const Breeds = () => {
                             }
                             alt=''
                         ></img>
-                        <p>{horse.title}</p>
-                        <p>{horse.shortDesc}</p>
-                        <p>{horse.fullDesc}</p>
+                        <p className='shortDesc_title'>{horse.shortDesc}</p>
+                        <p className='fullDesc_title'>{horse.fullDesc}</p>
                         <div className='button'>
                             {auth.token !== null && (
                                 <Button
