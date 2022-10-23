@@ -1,10 +1,11 @@
 import { AlertError } from './Alert';
 import { Auth } from '../asyncAction/auth';
-import { Button } from '@mui/material';
-import { TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+
+// import { Button } from '@mui/material';
+// import { TextField } from '@mui/material';
 
 export const Autorization = () => {
     let navigate = useNavigate();
@@ -15,9 +16,48 @@ export const Autorization = () => {
         event.preventDefault();
         dispatch(Auth(navigate, login, password));
     }
-
     return (
-        <form onSubmit={handleSubmit}>
+        <div className='entry-content'>
+            <div className='login'>
+                <h1>Введите логин и пароль</h1>
+                <form
+                    name='autorize'
+                    method='post'
+                    action=''
+                    onSubmit={handleSubmit}
+                >
+                    <AlertError></AlertError>
+                    <p>
+                        <input
+                            type='text'
+                            name='login'
+                            required=''
+                            placeholder='Логин'
+                            onChange={(e) => setLogin(e.target.value)}
+                        ></input>
+                    </p>
+                    <p>
+                        <input
+                            type='password'
+                            name='password'
+                            required=''
+                            placeholder='Пароль'
+                            onChange={(e) => setPassword(e.target.value)}
+                        ></input>
+                    </p>
+                    <p className='submit'>
+                        <input
+                            type='submit'
+                            name='commit'
+                            value='Войти'
+                        ></input>
+                    </p>
+                </form>
+            </div>
+
+            <div className='clearfix'></div>
+        </div>
+        /* <form onSubmit={handleSubmit}>
             <AlertError></AlertError>
             <div className='auth'>
                 <div className='autorization'>
@@ -43,7 +83,7 @@ export const Autorization = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <div className='auth_button'>
+                    <div className=''>
                         <Button
                             className='submit'
                             type='submit'
@@ -54,6 +94,6 @@ export const Autorization = () => {
                     </div>
                 </div>
             </div>
-        </form>
+        </form> */
     );
 };
