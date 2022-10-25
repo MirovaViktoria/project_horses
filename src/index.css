@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -5,15 +9,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#root {
+/* #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
+
+/*              LOGO               */
+
+
 .logo {
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+/*              MENU               */
+
 .menu {
   display: flex;
   width: 100%;
@@ -21,99 +34,7 @@ body {
   align-items: center;
   font-size: 20px;
 }
-.about_horses {
-  font-style:oblique;
-  color: maroon;
-  font-family: 'Lexend Deca', sans-serif;
-}
-.title {
-  font-family: 'Lexend Deca', sans-serif;
-  margin-bottom: 20px;
-  color:#0a0a0a;
-  text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3); 
-}
-
-.addition {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-li {
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.home {
-  display: flex;
-  flex-direction: column;
-}
-.gallery_img {
-  width: 150px;
-  height: 150px;
-  padding: 5px;
-}
-.textarea {
-  font-size: 18px;
-  margin-bottom:20px
-}
-h1 {
-  font-size: 20px;
-}
-.horse_title {
-  font-weight: bold;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  font-size: larger;
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-  font-family: 'Lexend Deca', sans-serif;
-}
-.shortDesc_title {
-  font-family: 'Lexend Deca', sans-serif;
-}
-.fullDesc_title {
-  font-family: 'Lexend Deca', sans-serif;
-}
-.button {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  padding-bottom: 20px;
-}
-.button_control {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.horses {
-  margin-top: 10px;
-  height: 200px;
-  border-radius: 10px;
-}
-.addHorse {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-}
-.submit_horses {
-  width: 800px;
-  font-size:larger;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.button_submit {
-  display: flex;
-  width: 705px;
-  justify-content: flex-end;
-}
-.submit {
-  margin-top: 10px;
-}
-
- .active {
+.active {
   text-decoration: none;
   color: rgb(219, 155, 17);
   cursor: default;
@@ -133,39 +54,93 @@ a:visited {
   cursor: grab;
 }  
 
-.auth {
-  width: 300px;
-  height: 350px;
-  border-radius: 10px;
+
+/*              HOME             */
+
+
+.home {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.title {
+  font-family: 'Lexend Deca', sans-serif;
+  margin-bottom: 20px;
+  color:#0a0a0a;
+  text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3); 
+}
+.about_horses {
+  font-style:oblique;
+  color: maroon;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.gallery_img {
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+}
+
+/*              BREEDS (ПОРОДЫ)            */
+
+
+.horse_title {
+  font-weight: bold;
+  display: flex;
+  width: 100%;
   justify-content: center;
-  margin-top: 100px;
+  font-size: larger;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  font-family: 'Lexend Deca', sans-serif;
 }
-.autorization {
+.horses {
+  margin-top: 10px;
+  height: 200px;
+  border-radius: 10px;
+}
+.shortDesc_title {
+  font-family: 'Lexend Deca', sans-serif;
+}
+.fullDesc_title {
+  font-family: 'Lexend Deca', sans-serif;
+}
+.button {
+  display: flex;
   width: 100%;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+
+/*              DATA             */
+
+h1 {
+  font-size: 20px;
+}
+
+
+/*              ADD_HORSES             */
+
+.addHorse {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+.submit_horses {
+  width: 800px;
+  font-size:larger;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
-.login {
-  margin: 0px 0px 25px 0px;
-}
-.password {
-  margin: 0px 0px 25px 0px;
-}
-.auth_button {
-  width: 100%;
+.button_submit {
   display: flex;
+  width: 705px;
   justify-content: flex-end;
-  margin-right: 20px;
 }
 
 
-/* //////////////////////// */
-/* Autorization */
-/* Autorization */
+
+/*               AUTORIZATION            */
+
 .login {
     position: relative;
     margin: 50px auto 0 auto;
@@ -379,3 +354,65 @@ input[type=text]:focus, input[type=password]:focus {
     font-weight: bold;
     color: #888;
 }
+/*               NEW__MENU           */
+
+
+.new_menu {
+  /* display: flex;
+  flex-direction: column; */
+  display: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 20px;
+}
+.active {
+  text-decoration: none;
+  color: rgb(219, 155, 17);
+  cursor: default;
+} 
+a:link {
+  text-decoration: none;
+   color: black;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+  cursor: grab;
+} 
+ a:hover {
+  text-decoration: none;
+  color: black;
+  cursor: grab;
+}  
+.btn_menu {
+  display: flex;
+  flex-direction: column;
+  /* display: none; */
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+
+
+/* ///////////////////////////////////////// */
+/* ///////////////////////////////////////// */
+
+
+/*                ДЛЯ ТЕЛЕФОНА                */
+@media screen and (max-width: 500px) {
+  .menu {
+  display: none;
+}
+h1 {
+  font-size: 18px;
+}
+
+.new_menu {
+  display: flex;
+  flex-direction: column;
+}
+}
+/* ul,
+li {
+  list-style: none;
+} */

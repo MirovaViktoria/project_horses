@@ -4,9 +4,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-// import { Button } from '@mui/material';
-// import { TextField } from '@mui/material';
-
 export const Autorization = () => {
     let navigate = useNavigate();
     const dispatch = useDispatch();
@@ -57,43 +54,5 @@ export const Autorization = () => {
 
             <div className='clearfix'></div>
         </div>
-        /* <form onSubmit={handleSubmit}>
-            <AlertError></AlertError>
-            <div className='auth'>
-                <div className='autorization'>
-                    <div className='login'>
-                        <TextField
-                            type='text'
-                            required
-                            id='Login'
-                            label='Login'
-                            multiline
-                            maxRows={2}
-                            onChange={(e) => setLogin(e.target.value)}
-                        />
-                    </div>
-                    <div className='password'>
-                        <TextField
-                            type='password'
-                            required
-                            id='Password'
-                            label='Password'
-                            multiline
-                            maxRows={2}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <div className=''>
-                        <Button
-                            className='submit'
-                            type='submit'
-                            variant='contained'
-                        >
-                            Submit
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </form> */
     );
 };
