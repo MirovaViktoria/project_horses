@@ -384,6 +384,7 @@ a:visited {
   color: black;
   cursor: grab;
 }  
+
 .btn_menu {
   display: flex;
   flex-direction: column;
@@ -391,8 +392,12 @@ a:visited {
   align-items: flex-end;
   cursor: pointer;
 }
-
-
+.btn {
+  width: 100%;
+}
+.btn.active {
+  transform: translateX(0);
+}
 
 /* ///////////////////////////////////////// */
 /* ///////////////////////////////////////// */
@@ -409,8 +414,8 @@ h1 {
 
 .new_menu {
   display: flex;
-  flex-direction: column;
 }
+
 }
 /* ul,
 li {

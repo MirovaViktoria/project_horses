@@ -3,6 +3,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+import BackToTop from './ButtonTop';
 import { Button } from '@mui/material';
 import React from 'react';
 import { deleteHorses } from '../asyncAction/horses';
@@ -17,6 +18,7 @@ const Breeds = () => {
 
     return (
         <div className='info'>
+            {/* <BackToTop /> */}
             <div className='horse.info'>
                 {horses.map((horse) => (
                     <div
